@@ -4,16 +4,16 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxWB76HF7DIDeWEcfWP4ti_CUwXKx5B2s",
-  authDomain: "chatapp-8d640.firebaseapp.com",
-  projectId: "chatapp-8d640",
-  storageBucket: "chatapp-8d640.appspot.com",
-  messagingSenderId: "879787113078",
-  appId: "1:879787113078:web:338e4bc5a288e65c2fbd57"
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
+  projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
+  appId: `${process.env.REACT_APP_APP_ID}`,
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const storage = getStorage();
-export const db = getFirestore(app)
+export const db = getFirestore(app);
